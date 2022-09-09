@@ -5,6 +5,8 @@ services:
   database:
     image: postgres:14
     restart: unless-stopped
+    # Override the image command to enable statement logging, output to the Docker log
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
     environment:
       POSTGRES_PASSWORD: changeme
       POSTGRES_USER: pguser
