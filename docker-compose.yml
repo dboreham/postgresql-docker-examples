@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  database:
+    image: postgres:14
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: pguser
+      POSTGRES_DB: db
+    ports:
+      # Postgresql
+      - "5432"
