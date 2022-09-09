@@ -13,7 +13,7 @@ services:
       POSTGRES_USER: pguser
       POSTGRES_DB: db
     volumes:
-      # This makes PG execute the statement "create extension pg_stat_statements on first startup
+      # This makes PG execute the statement "create extension pg_stat_statements" on first startup
       - ./create-pg-stat-statements.sql:/docker-entrypoint-initdb.d/create-pg-stat-statements.sql
     ports:
       # Postgresql
